@@ -1,0 +1,23 @@
+@mixin font-face($name, $file) {
+  @font-face {
+    font-family: "#{$name}";
+    src: local("#{name}"), url("~@/fonts/#{$file}.ttf") format("truetype");
+  }
+}
+
+@include font-face(golos, golos);
+@include font-face(golos, golostext_black);
+@include font-face(golos, golostext_bold);
+@include font-face(golos, golostext_demibold);
+@include font-face(golos, golostext_medium);
+@include font-face(golos, golostext_regular);
+@include font-face(roadradio, RoadRadio);
+
+.container {
+  max-width: 1290px;
+  margin: auto;
+}
+
+body {
+  font-family: "Golos";
+}
