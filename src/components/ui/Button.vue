@@ -19,5 +19,14 @@ export default {
   font-weight: 400;
   font-size: 14px;
   line-height: 14px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #ca3e4e;
+  }
+
+  @media screen and (max-width: 1030px) {
+    display: none;
+  }
 }
 </style>

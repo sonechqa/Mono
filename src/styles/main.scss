@@ -12,6 +12,7 @@
 @include font-face(golos, golostext_medium);
 @include font-face(golos, golostext_regular);
 @include font-face(roadradio, RoadRadio);
+@include font-face(graphik lc web, graphiklcweb_medium);
 
 .container {
   max-width: 1290px;
@@ -20,4 +21,6 @@
 
 body {
   font-family: "Golos";
+  margin-left: 0;
+  margin-right: 0;
 }

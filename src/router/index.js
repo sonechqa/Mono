@@ -1,14 +1,20 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import HomeView from "../views/Monevac.vue";
+import Monevac from "../views/Monevac.vue";
+import Contacts from "../components/contacts/Contacts.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
-    name: "home",
-    component: HomeView,
+    name: "monevac",
+    component: Monevac,
+  },
+  {
+    path: "/contacts",
+    name: "contacts",
+    component: Contacts,
   },
 ];
 

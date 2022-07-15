@@ -1,7 +1,7 @@
 <template>
   <div class="burger">
-    <div class="line-one"></div>
-    <div class="line-two"></div>
+    <div class="burger__line-one"></div>
+    <div class="burger__line-two"></div>
   </div>
 </template>
 
@@ -12,7 +12,11 @@ export default {
 </script>
 
 <style lang="scss">
-.line-one {
+.burger {
+  cursor: pointer;
+}
+
+.burger__line-one {
   width: 32px;
   height: 2px;
   background-color: #262633;
@@ -20,7 +24,7 @@ export default {
   margin-bottom: 10px;
 }
 
-.line-two {
+.burger__line-two {
   width: 17px;
   height: 2px;
   background-color: #262633;
