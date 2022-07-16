@@ -118,6 +118,10 @@ export default {
       display: none;
     }
   }
+
+  @media screen and (max-width: 730px) {
+    display: none;
+  }
 }
 
 .header__service {
@@ -177,6 +181,10 @@ export default {
   @media screen and (max-width: 1030px) {
     margin-right: 45px;
     margin-left: 45px;
+  }
+
+  @media screen and (max-width: 730px) {
+    display: none;
   }
 }
 

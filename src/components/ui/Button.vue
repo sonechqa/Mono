@@ -22,7 +22,7 @@ export default {
   cursor: pointer;
 
   &:hover {
-    background-color: #ca3e4e;
+    background-color: #cc2a3c;
   }
 
   @media screen and (max-width: 1030px) {

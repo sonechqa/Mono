@@ -1,7 +1,7 @@
 <template>
   <section class="contacts">
     <h1 class="contacts__title">КОНТАКТЫ</h1>
-    <div class="contacts_details">
+    <div class="contacts__details container">
       <div class="contacts__about-company">
         <div class="contacts__number-and-email">
           <a href="#" class="contacts__number">8 (903) 467 98 51</a>
@@ -10,37 +10,67 @@
 
         <div class="contacts__name">
           <p class="contacts__type">
-            Полное наименование: Общество с ограниченной ответственностью
-            «МОНЕВАК»
+            Полное наименование:<br />
+            Общество с ограниченной ответственностью «МОНЕВАК»<br />
+            Сокращенное наименование: ООО «МОНЕВАК»
           </p>
-          <p class="contacts__type">Сокращенное наименование: ООО «МОНЕВАК»</p>
         </div>
 
         <div class="contacts__codes">
-          <p>ИНН: 3448050610</p>
-          <p>КПП: 344801001</p>
-          <p>ОКПО: 67354285</p>
-          <p>ОКАТО: 18401000000</p>
-          <p>ОГРН: 1103461002480</p>
-          <p>Код по ОКВЭД: 51.70</p>
+          <p>
+            ИНН: 3448050610 <br />
+            КПП: 344801001 <br />
+            ОКПО: 67354285 <br />
+            ОКАТО: 18401000000 <br />
+            ОГРН: 1103461002480 <br />
+            Код по ОКВЭД: 51.70
+          </p>
         </div>
 
         <div class="contacts__requisites">
-          <p>Банк: Филиал «Ростовский» ОАО «Альфа-Банк» г Ростов на Дону</p>
-          <p>БИК: 046015207</p>
-          <p>к/с: 30101810500000000207</p>
-          <p>р/с: 40702810926090000003</p>
+          <p>
+            Банк: Филиал «Ростовский» ОАО «Альфа-Банк» г Ростов на Дону <br />
+            БИК: 046015207 <br />
+            к/с: 30101810500000000207 <br />
+            р/с: 40702810926090000003
+          </p>
+        </div>
+
+        <div class="contacts__address">
+          <p>
+            Юридический адрес: 400080, Волгоградская обл. г. Волгоград <br />
+            ул. Командира Рудь,14А, офис 13 <br />
+            Почтовый адрес: 400080, Волгоградская обл. г. Волгоград <br />
+            ул. Командира Рудь, 14А, офис 13
+          </p>
         </div>
       </div>
 
-      <div class="contacts__questions"></div>
+      <div class="contacts__questions">
+        <h2 class="contacts__have-questions">ОСТАЛИСЬ ВОПРОСЫ?</h2>
+        <div class="contacts__user-data">
+          <Input placeholder="Ваше имя" />
+          <Input placeholder="Ваш телефон" />
+        </div>
+        <TextArea placeholder="Ваше сообщение" />
+        <Checkbox />
+      </div>
     </div>
   </section>
 </template>
 
 <script>
+import Input from "../ui/Input.vue";
+import TextArea from "../ui/TextArea.vue";
+import Checkbox from "../ui/Checkbox.vue";
+
 export default {
   name: "Contacts",
+  components: {
+    Input,
+    TextArea,
+    Checkbox,
+  },
 };
 </script>
 
@@ -56,6 +86,28 @@ export default {
   margin-top: 0;
   padding-top: 25px;
   padding-bottom: 25px;
+}
+
+.contacts__details {
+  display: flex;
+}
+
+.contacts__about-company {
+  margin-right: 50px;
+  width: 50%;
+}
+
+.contacts__questions {
+  width: 50%;
+}
+
+.contacts__have-questions {
+  margin-top: 0;
+}
+
+.contacts__user-data {
+  display: flex;
+  justify-content: space-between;
 }
 
 .contacts__number-and-email {
@@ -85,5 +137,22 @@ export default {
   &:hover {
     color: #ca3e4e;
   }
+}
+
+.contacts__type {
+  font-family: "Golos";
+  font-weight: 400;
+  font-size: 17px;
+  color: #262633;
+}
+
+.contacts__codes,
+.contacts__requisites,
+.contacts__address {
+  font-family: "Golos";
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 150%;
+  color: #808080;
 }
 </style>
