@@ -48,7 +48,7 @@
         <a href="#" class="header__email">info@monevac.ru</a>
       </div>
 
-      <Button />
+      <Button>ОСТАВИТЬ ЗАЯВКУ</Button>
     </div>
 
     <nav class="header__bottom">
@@ -83,14 +83,37 @@ export default {
 <style lang="scss">
 .header {
   padding-top: 20px;
+
+  .button {
+    @media screen and (max-width: 1030px) {
+      display: none;
+    }
+  }
 }
 
 .header__top {
   display: flex;
   align-items: center;
   width: 100%;
+
   @media screen and (max-width: 1320px) {
     width: 95%;
+  }
+
+  @media screen and (max-width: 720px) {
+    width: 90%;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 88%;
+  }
+
+  @media screen and (max-width: 410px) {
+    width: 85%;
+  }
+
+  @media screen and (max-width: 320px) {
+    width: 83%;
   }
 }
 

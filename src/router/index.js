@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Monevac from "../views/Monevac.vue";
-import Contacts from "../components/contacts/Contacts.vue";
+import Contacts from "../views/Contacts.vue";
 
 Vue.use(VueRouter);
 

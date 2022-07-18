@@ -1,11 +1,5 @@
 <template>
-  <textarea
-    name=""
-    id=""
-    cols="65"
-    rows="5"
-    :placeholder="placeholder"
-  ></textarea>
+  <textarea name="" id="" :placeholder="placeholder"></textarea>
 </template>
 
 <script>
@@ -25,6 +19,9 @@ textarea {
   outline: none;
   border: none;
   resize: none;
+  width: 100%;
+  box-sizing: border-box;
+  height: 150px;
   border-radius: 14px;
   font-family: "Golos";
   font-weight: 400;

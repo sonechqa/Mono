@@ -2,8 +2,10 @@
   <div class="checkbox">
     <input id="agreement" class="checkbox__custom-checkbox" type="checkbox" />
     <label for="agreement" class="checkbox__label">
-      Я подтверждаю свое согласие с политикой в отношении &nbsp;
-      <a href="#" class="checkbox__link">обработки персональных данных</a>
+      <p class="checkbox__processing">
+        Я подтверждаю свое согласие с политикой в отношении
+        <a href="#" class="checkbox__link">обработки персональных данных</a>
+      </p>
     </label>
   </div>
 </template>
@@ -25,6 +27,7 @@ export default {
   font-size: 13px;
   line-height: 120%;
   color: #808080;
+  margin-bottom: 30px;
 }
 
 .checkbox__link {
@@ -48,7 +51,7 @@ export default {
   background-color: #f5f5f5;
   border-radius: 4px;
   cursor: pointer;
-  margin-right: 25px;
+  margin-right: 15px;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 50% 50%;
@@ -62,5 +65,10 @@ export default {
 .checkbox__custom-checkbox:checked + label::before {
   background-color: #bf2738;
   background-image: url("@/assets/checkmark.png");
+}
+
+.checkbox__processing {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 </style>

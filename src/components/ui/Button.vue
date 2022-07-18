@@ -1,5 +1,5 @@
 <template>
-  <button class="button">ОСТАВИТЬ ЗАЯВКУ</button>
+  <button class="button"><slot></slot></button>
 </template>
 
 <script>
@@ -23,10 +23,6 @@ export default {
 
   &:hover {
     background-color: #cc2a3c;
-  }
-
-  @media screen and (max-width: 1030px) {
-    display: none;
   }
 }
 </style>
