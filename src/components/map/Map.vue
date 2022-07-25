@@ -4,6 +4,7 @@
 
 <script>
 import mapboxgl from "mapbox-gl";
+import MapboxLanguage from "@mapbox/mapbox-gl-language";
 
 export default {
   name: "Map",
@@ -25,6 +26,15 @@ export default {
       projection: "mercator",
     });
 
+    mapboxgl.setRTLTextPlugin(
+      "https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-rtl-text/v0.2.3/mapbox-gl-rtl-text.js"
+    );
+    map.addControl(
+      new MapboxLanguage({
+        defaultLanguage: "ru",
+      })
+    );
+
     const markers = [
       [49.824514360691275, 53.581385163641194],
       [50.14311787284804, 55.249661979808934],
@@ -35,7 +45,7 @@ export default {
 
     markers.forEach((coordinates) => {
       const el = document.createElement("div");
-      el.className = "marker";
+      el.className = "map__marker";
       new mapboxgl.Marker(el).setLngLat(coordinates).addTo(map);
     });
 
@@ -60,7 +70,7 @@ export default {
   }
 }
 
-.marker {
+.map__marker {
   background-image: url("@/assets/marker.png");
   background-size: cover;
   width: 36px;
