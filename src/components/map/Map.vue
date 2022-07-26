@@ -63,6 +63,7 @@ export default {
   width: 100%;
   height: 600px;
   margin-top: 60px;
+  margin-bottom: 50px;
 
   @media screen and (max-width: 768px) {
     height: 480px;

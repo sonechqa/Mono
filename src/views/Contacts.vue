@@ -66,6 +66,35 @@
     <section class="map">
       <Map />
     </section>
+
+    <section class="location container">
+      <div
+        v-for="(city, index) in cities"
+        v-bind:key="index"
+        class="location__city"
+      >
+        <div class="location__title">
+          {{ city.title }}
+        </div>
+
+        <div class="location__number">
+          {{ city.numberOne }} <br />
+          {{ city.numberTwo }}
+        </div>
+
+        <div class="location__address">
+          {{ city.address }}
+        </div>
+
+        <a href="#" class="location__path">
+          {{ city.path }}
+        </a>
+
+        <div class="location__schedule">
+          {{ city.schedule }}
+        </div>
+      </div>
+    </section>
   </main>
 </template>
 
@@ -78,12 +107,78 @@ import Map from "../components/map/Map.vue";
 
 export default {
   name: "Contacts",
+
   components: {
     Input,
     TextArea,
     Checkbox,
     Button,
     Map,
+  },
+
+  data() {
+    return {
+      cities: [
+        {
+          title: "МОСКВА",
+          numberOne: "+7 (499) 136-17-18",
+          numberTwo: "+7 (903) 467-98-51",
+          address:
+            "115114, ул. Дербеневская, д. 1, стр. 1, подъезд 44, офис 6 (станция метро 'Павелецкая')",
+          path: "Проложить маршрут",
+          schedule: "Режим работы: c 10:00 до 18:00",
+        },
+        {
+          title: "ВОЛГОГРАД",
+          numberOne: "+7 (8442) 65-08-88",
+          numberTwo: "+7 (8442) 65-08-80",
+          address: "400080, ул. Командира Рудь, 14А",
+          path: "Проложить маршрут",
+          schedule: "Режим работы: c 08:00 до 17:00",
+        },
+        {
+          title: "КРАСНОДАР",
+          numberOne: "+7 (861) 292-71-88",
+          numberTwo: "+7 (903) 467-98-51",
+          address: "350015, ул. Митрофана Седина, 176",
+          path: "Проложить маршрут",
+          schedule: "Режим работы: c 08:00 до 17:00",
+        },
+        {
+          title: "САРАТОВ",
+          numberOne: "+7 (927) 626-00-50",
+          numberTwo: "+7 (903) 467-98-51",
+          address: "410080, пр-т Строителей, 1",
+          path: "Проложить маршрут",
+          schedule: "Режим работы: c 10:00 до 18:00",
+        },
+        {
+          title: "ВОРОНЕЖ",
+          numberOne: "+7 (473) 229-63-78",
+          numberTwo: "+7 (903) 467-98-51",
+          address: "394030, ул. Комиссаржевской, 10",
+          path: "Проложить маршрут",
+          schedule: "Режим работы: c 10:00 до 18:00",
+        },
+        {
+          title: "ЕРЕВАН",
+          numberOne: "+374 91 21 90 69",
+          numberTwo: "+374 60 50 90 69",
+          address: "Район Аван 4, дом 2",
+          path: "Проложить маршрут",
+          schedule: "Режим работы: c 10:00 до 18:00",
+        },
+        {
+          title: "НОВОСИБИРСК",
+          numberOne:
+            "+7 (383) 20-62-461; +7 (383) 20-62-711 +7 (903) 467-98-51",
+          numberTwo: "Факс: +7 (383) 20-62-209; +7 (383) 20-62-210",
+          address: "630039, ул. Никитина 116, к.3",
+          path: "Проложить маршрут",
+          schedule: "Режим работы: c 10:00 до 18:00",
+        },
+      ],
+    };
   },
 };
 </script>
@@ -213,5 +308,72 @@ export default {
   font-size: 13px;
   line-height: 150%;
   color: #808080;
+}
+
+.location {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.location__city {
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  padding-left: 20px;
+  margin-top: 30px;
+  box-sizing: border-box;
+
+  &:not(:last-child) {
+    max-width: 300px;
+    width: 100%;
+  }
+
+  &:last-child {
+    padding-right: 90px;
+  }
+}
+
+.location__title {
+  font-family: "RoadRadio";
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 110%;
+  color: #262633;
+  padding-top: 30px;
+  margin-bottom: 15px;
+}
+
+.location__number {
+  font-family: "Golos";
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 150%;
+  color: #262633;
+  margin-bottom: 10px;
+}
+
+.location__address {
+  font-family: "Golos";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  color: #797986;
+}
+
+.location__path {
+  text-decoration: none;
+  font-family: "Golos";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  color: #bf2738;
+}
+
+.location__schedule {
+  font-family: "Golos";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  color: #262633;
 }
 </style>
