@@ -77,16 +77,19 @@
           {{ city.title }}
         </div>
 
-        <div class="location__number">
+        <a href="#" class="location__number">
           {{ city.numberOne }} <br />
           {{ city.numberTwo }}
-        </div>
+        </a>
 
         <div class="location__address">
           {{ city.address }}
         </div>
 
-        <a href="#" class="location__path">
+        <a
+          href="https://www.google.com/maps/dir///@52.9599085,43.5290774,6z"
+          class="location__path"
+        >
           {{ city.path }}
         </a>
 
@@ -314,6 +317,10 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+
+  @media screen and (max-width: 678px) {
+    justify-content: center;
+  }
 }
 
 .location__city {
@@ -322,14 +329,84 @@ export default {
   padding-left: 20px;
   margin-top: 30px;
   box-sizing: border-box;
+  min-height: 310px;
 
   &:not(:last-child) {
     max-width: 300px;
     width: 100%;
+
+    @media screen and (max-width: 1300px) {
+      max-width: 270px;
+    }
+
+    @media screen and (max-width: 1200px) {
+      margin-right: 15px;
+    }
+
+    @media screen and (max-width: 768px) {
+      max-width: 335px;
+      margin-right: 10px;
+    }
+
+    @media screen and (max-width: 750px) {
+      max-width: 300px;
+    }
+
+    @media screen and (max-width: 678px) {
+      max-width: 350px;
+    }
+
+    @media screen and (max-width: 420px) {
+      max-width: 300px;
+    }
   }
 
   &:last-child {
     padding-right: 90px;
+
+    @media screen and (max-width: 1300px) {
+      padding-right: 60px;
+    }
+
+    @media screen and (max-width: 1200px) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media screen and (max-width: 678px) {
+      max-width: 350px;
+      min-height: 395px;
+      margin-left: 0;
+      margin-right: 10px;
+    }
+
+    @media screen and (max-width: 420px) {
+      max-width: 320px;
+    }
+
+    @media screen and (max-width: 356px) {
+      padding-right: 40px;
+    }
+
+    @media screen and (max-width: 320px) {
+      padding-right: 20px;
+    }
+  }
+
+  &:not(:first-child) {
+    .location__schedule {
+      margin-top: 60px;
+    }
+  }
+
+  &:first-child {
+    .location__schedule {
+      margin-top: 20px;
+    }
+  }
+
+  @media screen and (max-width: 370px) {
+    padding-left: 10px;
   }
 }
 
@@ -344,6 +421,7 @@ export default {
 }
 
 .location__number {
+  text-decoration: none;
   font-family: "Golos";
   font-weight: 400;
   font-size: 19px;
@@ -375,5 +453,7 @@ export default {
   font-size: 14px;
   line-height: 140%;
   color: #262633;
+  display: block;
+  margin-top: auto;
 }
 </style>
