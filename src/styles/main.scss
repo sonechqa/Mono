@@ -5,14 +5,14 @@
   }
 }
 
-@include font-face(golos, golos);
-@include font-face(golos, golostext_black);
-@include font-face(golos, golostext_bold);
-@include font-face(golos, golostext_demibold);
-@include font-face(golos, golostext_medium);
-@include font-face(golos, golostext_regular);
-@include font-face(roadradio, RoadRadio);
-@include font-face(graphik lc web, graphiklcweb_medium);
+@include font-face(Golos, golos);
+@include font-face(Golos, golostext_black);
+@include font-face(Golos, golostext_bold);
+@include font-face(Golos, golostext_medium);
+@include font-face(Golos, golostext_regular);
+@include font-face(RoadRadio, RoadRadio);
+@include font-face("Graphik LC Web", graphiklcweb_medium);
+@include font-face("Akzidenz-Grotesk Pro", akzidenzgroteskpro_regular);
 
 .container {
   max-width: 1290px;
@@ -27,4 +27,9 @@ body {
   font-family: "Golos";
   margin-left: 0;
   margin-right: 0;
+  margin-bottom: 0;
+}
+
+* {
+  box-sizing: border-box;
 }
