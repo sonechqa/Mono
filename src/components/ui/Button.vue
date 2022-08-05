@@ -20,6 +20,7 @@ export default {
   font-size: 14px;
   line-height: 14px;
   cursor: pointer;
+  transition: background-color ease 0.3s;
 
   &:hover {
     background-color: #cc2a3c;

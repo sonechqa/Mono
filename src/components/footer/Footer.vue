@@ -100,12 +100,22 @@ export default {
   margin-top: 100px;
   background-color: #222225;
   position: relative;
+  overflow: hidden;
 
   .container {
     display: flex;
     flex-wrap: wrap;
     position: relative;
     z-index: 2;
+
+    @media screen and (max-width: 670px) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @media screen and (max-width: 332px) {
+      margin: 0 20px;
+    }
   }
 
   &::before {
@@ -116,6 +126,10 @@ export default {
     position: absolute;
     z-index: 1;
     left: 50%;
+
+    @media screen and (max-width: 670px) {
+      display: none;
+    }
   }
 
   &::after {
@@ -126,12 +140,28 @@ export default {
     position: absolute;
     z-index: 2;
     top: 85%;
+
+    @media screen and (max-width: 670px) {
+      top: 88%;
+    }
   }
 }
 
 .footer__information {
   width: 50%;
   padding-top: 60px;
+
+  @media screen and (max-width: 670px) {
+    padding-top: 40px;
+  }
+
+  @media screen and (max-width: 610px) {
+    width: 70%;
+  }
+
+  @media screen and (max-width: 452px) {
+    width: 100%;
+  }
 }
 
 .footer__materials {
@@ -142,6 +172,7 @@ export default {
 
 .footer__product {
   list-style-type: none;
+
   &:not(:last-child) {
     margin-bottom: 15px;
   }
@@ -154,6 +185,20 @@ export default {
   font-size: 24px;
   line-height: 140%;
   color: #ffffff;
+
+  @media screen and (max-width: 890px) {
+    font-size: 20px;
+    line-height: 120%;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-family: "Inter";
+    transition: color ease 0.3s;
+
+    &:hover {
+      color: #f23147;
+    }
+  }
 }
 
 .footer__about-us {
@@ -162,6 +207,39 @@ export default {
   padding-left: 0;
   margin-right: 155px;
   margin-top: 70px;
+
+  @media screen and (max-width: 950px) {
+    margin-right: 120px;
+  }
+
+  @media screen and (max-width: 890px) {
+    margin-right: 80px;
+  }
+
+  @media screen and (max-width: 820px) {
+    margin-right: 70px;
+  }
+
+  @media screen and (max-width: 800px) {
+    margin-right: 50px;
+  }
+
+  @media screen and (max-width: 760px) {
+    margin-right: 20px;
+  }
+
+  @media screen and (max-width: 700px) {
+    margin-right: 0px;
+  }
+
+  @media screen and (max-width: 670px) {
+    margin-bottom: 0;
+    margin-top: 15px;
+  }
+
+  @media screen and (max-width: 452px) {
+    width: 100%;
+  }
 }
 
 .footer__company {
@@ -179,10 +257,10 @@ export default {
   font-size: 16px;
   line-height: 180%;
   color: #797986;
+  transition: color ease 0.3s;
 
   &:hover {
     color: #ffffff;
-    transition: color ease 0.3s;
   }
 }
 
@@ -190,12 +268,43 @@ export default {
   width: 50%;
   padding-top: 60px;
   padding-left: 120px;
+
+  @media screen and (max-width: 950px) {
+    padding-left: 80px;
+  }
+
+  @media screen and (max-width: 820px) {
+    padding-left: 40px;
+  }
+
+  @media screen and (max-width: 670px) {
+    padding-left: 0;
+    padding-top: 0;
+    position: relative;
+    width: 100%;
+    margin-top: 40px;
+
+    &::before {
+      content: "";
+      width: 100vw;
+      height: 180%;
+      left: -30px;
+      background-color: #2a2a2e;
+      position: absolute;
+      z-index: -1;
+
+      @media screen and (max-width: 332px) {
+        left: -20px;
+      }
+    }
+  }
 }
 
 .footer__wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+
   .button {
     border: 2px solid #494950;
     background-color: transparent;
@@ -205,19 +314,36 @@ export default {
     line-height: 14px;
     color: #ffffff;
     height: 50%;
+    transition: background-color ease 0.3s;
 
     &:hover {
       background-color: #414147;
-      transition: background-color ease 0.3s;
     }
 
     @media screen and (max-width: 1260px) {
-      width: 50%;
+      margin-bottom: 15px;
+      width: auto;
     }
   }
 
   @media screen and (max-width: 1260px) {
     flex-direction: column;
+    align-items: flex-start;
+  }
+
+  @media screen and (max-width: 670px) {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 40px;
+  }
+
+  @media screen and (max-width: 610px) {
+    width: 70%;
+  }
+
+  @media screen and (max-width: 452px) {
+    width: 100%;
   }
 }
 
@@ -234,10 +360,14 @@ export default {
   font-size: 30px;
   line-height: 150%;
   color: #ffffff;
+  transition: color ease 0.3s;
 
   &:hover {
     color: #ffffffb4;
-    transition: color ease 0.3s;
+  }
+
+  @media screen and (max-width: 890px) {
+    font-size: 23px;
   }
 }
 
@@ -248,10 +378,14 @@ export default {
   font-size: 24px;
   line-height: 140%;
   color: #f23147;
+  transition: color ease 0.3s;
 
   &:hover {
     color: #ca3e4e;
-    transition: color ease 0.3s;
+  }
+
+  @media screen and (max-width: 890px) {
+    font-size: 19px;
   }
 }
 
@@ -264,11 +398,67 @@ export default {
   margin-top: 110px;
   margin-bottom: 0;
   margin-right: 200px;
+
+  @media screen and (max-width: 1260px) {
+    margin-top: 40px;
+  }
+
+  @media screen and (max-width: 1200px) {
+    margin-right: 150px;
+  }
+
+  @media screen and (max-width: 1080px) {
+    margin-top: 50px;
+  }
+
+  @media screen and (max-width: 1028px) {
+    margin-right: 120px;
+  }
+
+  @media screen and (max-width: 950px) {
+    margin-right: 90px;
+  }
+
+  @media screen and (max-width: 840px) {
+    margin-top: 45px;
+  }
+
+  @media screen and (max-width: 748px) {
+    margin-right: 50px;
+  }
+
+  @media screen and (max-width: 670px) {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media screen and (max-width: 610px) {
+    width: 70%;
+  }
+
+  @media screen and (max-width: 452px) {
+    width: 100%;
+  }
 }
 
 .footer__copyright {
   display: flex;
   width: 100%;
+
+  @media screen and (max-width: 670px) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 610px) {
+    align-items: stretch;
+    width: 70%;
+  }
+
+  @media screen and (max-width: 452px) {
+    width: 100%;
+  }
 }
 
 .footer__rights-reserved,
@@ -281,10 +471,37 @@ export default {
   width: 50%;
   margin-top: 65px;
   padding-bottom: 30px;
+
+  @media screen and (max-width: 670px) {
+    margin-top: 0;
+  }
+
+  @media screen and (max-width: 610px) {
+    width: 100%;
+  }
+}
+
+.footer__rights-reserved {
+  @media screen and (max-width: 670px) {
+    padding-bottom: 10px;
+    margin-top: 70px;
+  }
 }
 
 .footer__developer {
   padding-left: 120px;
+
+  @media screen and (max-width: 950px) {
+    padding-left: 80px;
+  }
+
+  @media screen and (max-width: 820px) {
+    padding-left: 40px;
+  }
+
+  @media screen and (max-width: 670px) {
+    padding-left: 0;
+  }
 }
 
 .footer__developer-link {

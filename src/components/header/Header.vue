@@ -137,6 +137,7 @@ export default {
 
   @media screen and (max-width: 1030px) {
     margin-right: 30px;
+
     &:last-child {
       display: none;
     }
@@ -154,6 +155,7 @@ export default {
   font-weight: 400;
   font-size: 15px;
   line-height: 18px;
+  transition: color ease 0.3s;
 
   &:hover {
     color: #555572;
@@ -219,6 +221,8 @@ export default {
   color: #262633;
   margin-bottom: 5px;
   text-decoration: none;
+  transition: color ease 0.3s;
+
   &:hover {
     color: #555572;
   }
@@ -231,6 +235,8 @@ export default {
   line-height: 120%;
   color: #797986;
   text-decoration: none;
+  transition: color ease 0.3s;
+
   &:hover {
     color: #9b9baa;
   }
@@ -252,8 +258,10 @@ export default {
 .header__variants {
   list-style-type: none;
   position: relative;
+
   &:not(:last-child) {
     margin-right: 50px;
+
     &::before {
       content: "";
       position: absolute;

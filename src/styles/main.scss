@@ -13,6 +13,7 @@
 @include font-face(RoadRadio, RoadRadio);
 @include font-face("Graphik LC Web", graphiklcweb_medium);
 @include font-face("Akzidenz-Grotesk Pro", akzidenzgroteskpro_regular);
+@include font-face(Inter, Inter-Regular);
 
 .container {
   max-width: 1290px;

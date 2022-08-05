@@ -227,6 +227,7 @@ export default {
 
 .contacts__questions {
   width: 50%;
+
   @media screen and (max-width: 660px) {
     width: 100%;
   }
@@ -242,6 +243,10 @@ export default {
 
   @media screen and (max-width: 980px) {
     font-size: 28px;
+  }
+
+  @media screen and (max-width: 660px) {
+    margin-top: 50px;
   }
 
   @media screen and (max-width: 365px) {
@@ -270,6 +275,7 @@ export default {
   font-size: 36px;
   line-height: 110%;
   color: #262633;
+  transition: color ease 0.3s;
 
   &:hover {
     color: #555572;
@@ -287,6 +293,8 @@ export default {
   font-size: 25px;
   line-height: 30px;
   color: #bf2738;
+  transition: color ease 0.3s;
+
   &:hover {
     color: #ca3e4e;
   }
@@ -318,8 +326,14 @@ export default {
   flex-wrap: wrap;
   justify-content: space-between;
 
-  @media screen and (max-width: 678px) {
+  @media screen and (max-width: 913px) {
     justify-content: center;
+  }
+
+  &.container {
+    @media screen and (max-width: 320px) {
+      margin: 0 15px;
+    }
   }
 }
 
@@ -327,6 +341,7 @@ export default {
   background-color: #f5f5f5;
   border-radius: 20px;
   padding-left: 20px;
+  padding-right: 10px;
   margin-top: 30px;
   box-sizing: border-box;
   min-height: 310px;
@@ -358,6 +373,7 @@ export default {
 
     @media screen and (max-width: 420px) {
       max-width: 300px;
+      margin-right: 0;
     }
   }
 
