@@ -1,15 +1,22 @@
 <template>
-  <button class="button"><slot></slot></button>
+  <button class="uiButton" :disabled="disabled"><slot></slot></button>
 </template>
 
 <script>
 export default {
-  name: "Button",
+  name: "UiButton",
+
+  props: {
+    disabled: {
+      type: Boolean,
+      default: true,
+    },
+  },
 };
 </script>
 
 <style lang="scss">
-.button {
+.uiButton {
   background-color: #bf2738;
   border: none;
   border-radius: 14px;

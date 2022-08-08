@@ -48,7 +48,7 @@
         <a href="#" class="header__email">info@monevac.ru</a>
       </div>
 
-      <Button>ОСТАВИТЬ ЗАЯВКУ</Button>
+      <UiButton>ОСТАВИТЬ ЗАЯВКУ</UiButton>
     </div>
 
     <nav class="header__bottom">
@@ -69,13 +69,13 @@
 
 <script>
 import Burger from "./Burger.vue";
-import Button from "../ui/Button.vue";
+import UiButton from "../ui/UiButton.vue";
 
 export default {
   name: "Header",
   components: {
     Burger,
-    Button,
+    UiButton,
   },
 };
 </script>
@@ -84,7 +84,7 @@ export default {
 .header {
   padding-top: 20px;
 
-  .button {
+  .uiButton {
     @media screen and (max-width: 1030px) {
       display: none;
     }

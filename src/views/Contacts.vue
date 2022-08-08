@@ -49,15 +49,26 @@
 
         <div class="contacts__questions">
           <h2 class="contacts__have-questions">ОСТАЛИСЬ ВОПРОСЫ?</h2>
-          <form class="contacts__user-data">
-            <Input placeholder="Ваше имя" />
-            <Input placeholder="Ваш телефон" />
-          </form>
+          <form class="contacts__user-data" @submit.prevent="textOfError">
+            <UiInput placeholder="Ваше имя" v-model="name" :error="nameError" />
+            <UiInput
+              placeholder="Ваш телефон"
+              v-model="phone"
+              :error="phoneError"
+            />
 
-          <form>
-            <TextArea placeholder="Ваше сообщение" />
-            <Checkbox />
-            <Button>ЗАДАТЬ ВОПРОС</Button>
+            <div class="contacts__textArea">
+              <UiTextArea
+                placeholder="Ваше сообщение"
+                v-model="message"
+                :error="messageError"
+              />
+            </div>
+
+            <UiCheckbox v-model="checkboxPressed" />
+            <UiButton @click="textOfError" :disabled="!checkboxPressed">
+              ЗАДАТЬ ВОПРОС
+            </UiButton>
           </form>
         </div>
       </div>
@@ -102,20 +113,20 @@
 </template>
 
 <script>
-import Input from "../components/ui/Input.vue";
-import TextArea from "../components/ui/TextArea.vue";
-import Checkbox from "../components/ui/Checkbox.vue";
-import Button from "../components/ui/Button.vue";
+import UiInput from "../components/ui/UiInput.vue";
+import UiTextArea from "../components/ui/UiTextArea.vue";
+import UiCheckbox from "../components/ui/UiCheckbox.vue";
+import UiButton from "../components/ui/UiButton.vue";
 import Map from "../components/map/Map.vue";
 
 export default {
   name: "Contacts",
 
   components: {
-    Input,
-    TextArea,
-    Checkbox,
-    Button,
+    UiInput,
+    UiTextArea,
+    UiCheckbox,
+    UiButton,
     Map,
   },
 
@@ -181,7 +192,32 @@ export default {
           schedule: "Режим работы: c 10:00 до 18:00",
         },
       ],
+
+      nameError: "",
+      phoneError: "",
+      messageError: "",
+      name: "",
+      phone: "",
+      message: "",
+      checkboxPressed: false,
     };
+  },
+
+  methods: {
+    textOfError() {
+      const text = "Является обязательным полем";
+      if (this.name === "") {
+        this.nameError = text;
+      }
+
+      if (this.phone === "") {
+        this.phoneError = text;
+      }
+
+      if (this.message === "") {
+        this.messageError = text;
+      }
+    },
   },
 };
 </script>
@@ -242,7 +278,7 @@ export default {
   color: #262633;
 
   @media screen and (max-width: 980px) {
-    font-size: 28px;
+    font-size: 27px;
   }
 
   @media screen and (max-width: 660px) {
@@ -257,10 +293,19 @@ export default {
 .contacts__user-data {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+
+  .uiButton {
+    max-width: 190px;
+  }
 
   @media screen and (max-width: 1330px) {
     flex-direction: column;
   }
+}
+
+.contacts__textArea {
+  width: 100%;
 }
 
 .contacts__number-and-email {

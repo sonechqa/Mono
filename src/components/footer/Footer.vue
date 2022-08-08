@@ -55,7 +55,7 @@
             <a href="#" class="footer__number">+7 (903) 467-98-51</a>
           </div>
 
-          <Button>ОБРАТНЫЙ ЗВОНОК</Button>
+          <UiButton>ОБРАТНЫЙ ЗВОНОК</UiButton>
 
           <div class="footer__email">
             <a href="#" class="footer__email-link">info@monevac.ru</a>
@@ -85,12 +85,12 @@
 </template>
 
 <script>
-import Button from "../ui/Button.vue";
+import UiButton from "../ui/UiButton.vue";
 
 export default {
   name: "Footer",
   components: {
-    Button,
+    UiButton,
   },
 };
 </script>
@@ -305,7 +305,7 @@ export default {
   flex-wrap: wrap;
   justify-content: space-between;
 
-  .button {
+  .uiButton {
     border: 2px solid #494950;
     background-color: transparent;
     font-family: "RoadRadio";
