@@ -77,7 +77,7 @@
 
         <div class="footer__developer">
           Разработка и продвижение сайта -
-          <a href="#" class="footer__developer-link">TODO</a>
+          <a href="#" class="footer__developer-link">Sonechqa</a>
         </div>
       </div>
     </div>
