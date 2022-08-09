@@ -6,6 +6,8 @@
 </template>
 
 <script>
+import IMask from "imask";
+
 export default {
   name: "UiInput",
   props: {
@@ -23,6 +25,11 @@ export default {
       type: String,
       default: "",
     },
+
+    mask: {
+      type: String,
+      default: "",
+    },
   },
 
   computed: {
@@ -31,6 +38,12 @@ export default {
         return this.value;
       },
       set(val) {
+        if (this.mask !== "") {
+          const phonePipe = IMask.createPipe({
+            mask: this.mask,
+          });
+          val = phonePipe(val);
+        }
         this.$emit("input", val);
       },
     },

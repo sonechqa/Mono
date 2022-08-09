@@ -55,6 +55,7 @@
               placeholder="Ваш телефон"
               v-model="phone"
               :error="phoneError"
+              mask="+{7} (000) 000-00-00"
             />
 
             <div class="contacts__textArea">
@@ -199,7 +200,7 @@ export default {
       name: "",
       phone: "",
       message: "",
-      checkboxPressed: false,
+      checkboxPressed: true,
     };
   },
 

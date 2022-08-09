@@ -9,7 +9,7 @@ export default {
   props: {
     disabled: {
       type: Boolean,
-      default: true,
+      default: false,
     },
   },
 };
@@ -31,6 +31,11 @@ export default {
 
   &:hover {
     background-color: #cc2a3c;
+  }
+
+  &:disabled {
+    background-color: #8e525c;
+    cursor: auto;
   }
 }
 </style>
